@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
+gem 'jquery-ui-rails', '~> 4.0.2'
+gem 'bootstrap-sass', '2.1'
 
 group :development do
   gem 'sqlite3', '1.3.5'
