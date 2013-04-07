@@ -1,5 +1,43 @@
-<h1>New result</h1>
+<!-- Start button -->
+<div id="content-1">
+	<h1>Welcome to Calorie Judge</h1>
+	<div id="nextbutton-c1" class="btn btn-info">Start</div>
+</div>
 
-<%= render 'form' %>
+<!-- Start button -->
+<div id="content-2">
+	<h1>Food 1</h1>
+	<div id="nextbutton-c2" class="btn btn-info">Next</div>
+</div>
 
-<%= link_to 'Back', results_path %>
+<div id="content-3">
+	<h1>Results Page</h1>
+	<div id="nextbutton-c3" class="btn btn-info">Next</div>
+</div>
+
+<script>
+
+var divs = $('div[id^="content-"]').hide(),
+    i = 0;
+
+    $('#content-1').show();
+
+    $('#nextbutton-c1').on('click', function() {
+    	divs.eq(0).fadeOut(400, function() {
+    		divs.eq(1).fadeIn(400);
+    	});
+    });
+
+    $('#nextbutton-c2').on('click', function() {
+    	divs.eq(1).fadeOut(400, function() {
+    		divs.eq(2).fadeIn(400);
+    	});
+    });
+
+    $('#nextbutton-c3').on('click', function() {
+    	divs.eq(2).fadeOut(400, function() {
+    		divs.eq(0).fadeIn(400);
+    	});
+    });
+
+</script>
