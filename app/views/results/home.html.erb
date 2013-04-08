@@ -1,0 +1,29 @@
+<div id="start">
+	<h1>Welcome to Calorie Judge</h1>
+
+	<h2>How accurate are your calorie estimation skills? Click start to find out!</h2>
+	<div>Name: <input type="text" id="name-field" value=""/></div>
+	<div>Age: <input type="text" name="age-field" value="" /></div>
+	<div><input type="radio" name="gender-m-field" value="male"> Male</div>
+	<div><input type="radio" name="gender-f-field" value="female"> Female</div>
+
+	<a href="/results/new" id="start-button" class="btn btn-info">Start</a>
+</div>
+
+<script>
+
+$('#start-button').on('click', function() {
+	var name = $('#name-field').val();
+	var age = $('#age-field').val();
+	var gender;
+	if $('#gender-m-field').checked) {
+		gender = "male";
+	} else {
+		gender = "female";
+	}
+
+	$('#start-button').attr('href', 'result/new?name=' + name + '&age=' + age + '&gender=' + gender);
+});
+
+</script>
+

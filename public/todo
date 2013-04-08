@@ -1,11 +1,12 @@
 todo
 ====
 
-- convert pngs to jpgs
-- add tag support
-- actually create results when you click submit
+- convert pngs to jpgs	| DONE
+- change home page
 - ask for name/gender/info when you first start
+- actually create results when you click submit
 - heavy css styling
-
+- add tag support
+- add suplementary information to the results page
 - find some way to replay while keeping track of previous data
 - add writeups and such

@@ -1,6 +1,88 @@
-<h1>Editing result</h1>
+<!-- Start button -->
+<script>
+    var diff = 0;
+    var calorie_vals = [<%= @foods[0].calorie%>, <%= @foods[1].calorie%>, <%= @foods[2].calorie%>, <%= @foods[3].calorie%>, <%= @foods[4].calorie%>, <%= @foods[5].calorie%>, <%= @foods[6].calorie%>, <%= @foods[7].calorie%>, <%= @foods[8].calorie%>, <%= @foods[9].calorie%>];
+    var diffs = [0,0,0,0,0,0,0,0,0,0];
+</script>
 
-<%= render 'form' %>
+<% (0..9).each do |n| %>
+<div id= <%= "food-" + n.to_s %>>
+    <%= render @foods[n] %>
+    <input type="number" id="<%= "input-" + n.to_s %>" value="0"/>
+	<div id= <%= "food-button-" + n.to_s %> class="btn btn-info">Next</div>
+</div>
+<% end %>
 
-<%= link_to 'Show', @result %> |
-<%= link_to 'Back', results_path %>
+<div id="end">
+	<h1>Results</h1>
+    <% (0..9).each do |n| %>
+        <div id=<%= "results-" + n.to_s %>>
+            <%= render @foods[n] %>
+        </div>
+    <% end %>
+	<%= link_to "Retry?",
+	{:controller => "results", :action => "retry", :id => @result.id},
+	{:class => "btn btn-info"} %>
+
+</div>
+
+<script>
+
+    var i = 0
+    $('#retry-button').on('click', function() {
+        $('#end').fadeOut(400, function() {
+            $('#food-0').fadeIn(400);
+        });
+    });
+
+    $('#end').hide();
+    <% (0..9).each do |n| %>
+        <% if n > 0 %>
+        $('#<%= "food-" + n.to_s %>').hide();
+        <% end %>
+        <% if n < 9 %>
+            $('#<%= "food-button-" + n.to_s%>').on('click', function() {
+                $('#<%= "food-" + n.to_s %>').fadeOut(400, function() {
+                    $('#<%= "food-" + (n+1).to_s %>').fadeIn(400);
+                });
+
+                var inputValue = $('#<%= "input-" + n.to_s%>').val();
+                diffs[i] = inputValue - calorie_vals[i];
+                i += 1;
+
+            });
+        <% else %>
+            $('#<%= "food-button-" + n.to_s%>').on('click', function() {
+                $('#<%= "food-" + n.to_s %>').fadeOut(400, function() {
+                    $('#end').fadeIn(400);
+                });
+
+                // last guess, prepare results page
+                var inputValue = $('#<%= "input-" + n.to_s%>').val();
+                diffs[i] = inputValue - calorie_vals[i];
+        
+                // update guesses on results page
+                var j = 0
+                <% (0..9).each do |n| %>
+                $('#<%= "results-" + n.to_s%>').append("Your guess: " + (diffs[j] + calorie_vals[j]) + " Actual: " + calorie_vals[j]);
+                j += 1;
+
+                var sum = 0
+                for (var i = 0; i < diffs.length; i++) 
+                	sum += diffs[i];
+
+                // ajax call to edit the results object
+                $.ajax({
+                	url: "/results/addResult",
+                	data: {
+                		id: <%= @result.id %>,
+                		result: sum
+                	}
+                });
+
+                <% end %>
+            });
+        <% end %>
+    <% end %>
+
+</script>

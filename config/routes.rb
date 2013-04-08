@@ -2,8 +2,15 @@ CalorieJudge::Application.routes.draw do
   resources :foods
 
 
-  resources :results
-
+  resources :results do
+    collection do
+      get :home
+      get :addResult
+      get :retry
+    end
+  end
+  
+  root to: 'results#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,6 +1,10 @@
 class ResultsController < ApplicationController
   # GET /results
   # GET /results.json
+
+  def home
+  end
+
   def index
     @results = Result.all
 
@@ -25,7 +29,6 @@ class ResultsController < ApplicationController
   # GET /results/new.json
   def new
     @result = Result.new
-    @foods = Food.all.shuffle[0..9]
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,6 +39,25 @@ class ResultsController < ApplicationController
   # GET /results/1/edit
   def edit
     @result = Result.find(params[:id])
+    @foods = Food.all.shuffle[0..9]
+
+    respond_to do |format| 
+      format.html
+      format.js
+    end
+  end
+
+  def addResult
+    @result = Result.find(params[:id])
+    @result.update_attributes(:result => params[:result])
+    render :text => '', :status => 204
+  end
+
+  def retry
+    @result = Result.new(params[:result])
+    if @result.save
+      redirect_to :action => "edit", :id => @result.id
+    end
   end
 
   # POST /results
@@ -45,7 +67,7 @@ class ResultsController < ApplicationController
 
     respond_to do |format|
       if @result.save
-        format.html { redirect_to @result, notice: 'Result was successfully created.' }
+        format.html { redirect_to :action => "edit", :id => @result.id }
         format.json { render json: @result, status: :created, location: @result }
       else
         format.html { render action: "new" }
