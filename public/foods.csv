@@ -1,0 +1,129 @@
+Number	Food Name	Calorie	Serving Size	Company	Calorie Source	Categories
+1	Apple	116	1 whole fruit (large)	NA	Calorie Count	Fruit
+2	Banana	105	1 whole fruit (medium)	NA	Calorie Count	Fruit
+3	Orange	62	1 whole fruit (medium)	NA	Calorie Count	Fruit
+4	Orange Juice	112	1 cup	NA	Calorie Count	Fruit, Juice, Drink
+5	Big Mac	550	1 burger	McDonald's	Calorie Count	Fast Food, Sandwich
+6	Doritos Locos Taco	170	1 taco	Taco Bell	tacobell.com	Fast Food
+7	Mountain Dew	165	12 oz	PepsiCo	Calorie Count	Soda, Drink
+8	Pepsi	150	12 oz	PepsiCo	Calorie Count	Soda, Drink
+9	Coke	146	12 oz	Coca-Cola	Calorie Count	Soda, Drink
+10	Volcano Nachos	970	354 g	Taco Bell	tacobell.com	Fast Food
+11	Fiesta Taco Salad-Beef	780	463 g	Taco Bell	tacobell.com	Fast Food
+12	McCafe Strawberry Shake	550	12 oz	McDonald's	mcdonalds.com	Fast Food, Beverage, Dessert
+13	Chicken McNuggets	470	10 pieces	McDonald's	mcdonalds.com	Fast Food
+14	Baja Chili Salad	730	577 g	Wendy's	wendys.com	Fast Food
+15	Baconator	970	1 burger	Wendy's	wendys.com	Fast Food, Sandwich
+16	Caramel Frosty Shake	1000	Large (513 g)	Wendy's	wendys.com	Fast Food, Beverage, Dessert
+17	Coffee	5	Grande (16 oz)	Starbucks	starbucks.com	Beverage
+18	Caramel Frappuccino	410	Grande (16 oz)	Starbucks	starbucks.com	Beverage, Dessert
+19	Feta Cheese	225	3 oz	NA	Lansky & Brownell 1982	Dairy
+20	Roast Turkey	100	2 oz	NA	Lansky & Brownell 1982	Meat
+21	Green Beans	34	4 oz	NA	Lansky & Brownell 1982	Vegetable
+22	Boiled Ham	133	2 oz	NA	Lansky & Brownell 1982	Meat
+23	Cooked Spaghetti	156	3 oz	NA	Lansky & Brownell 1982	Grains
+24	Potato Chips	162	1 oz	NA	Lansky & Brownell 1982	Snack
+25	Blueberries	56	3 oz	NA	Lansky & Brownell 1982	Fruit
+26	Bread	63	1 slice (1 oz)	NA	Lansky & Brownell 1982	Grains
+27	Celery	200	1425 g	NA	wisegeek.com	Vegetable
+28	Mini Peppers	200	740 g	NA	wisegeek.com	Vegetable
+29	Broccoli	200	588 g	NA	wisegeek.com	Vegetable
+30	Baby Carrots	200	570 g	NA	wisegeek.com	Vegetable
+31	Honeydew Melon	200	553 g	NA	wisegeek.com	Fruit
+32	Coca Cola	200	496 ml	Coca-Cola	wisegeek.com	Soda, Drink
+33	Red Onions	200	475 g	NA	wisegeek.com	Vegetable
+34	Apples	200	385 g	NA	wisegeek.com	Fruit
+35	Canned Green Peas	200	357 g	NA	wisegeek.com	Vegetable
+36	Whole Milk	200	333 ml	NA	wisegeek.com	Drink, Dairy
+37	Kiwi Fruit	200	328 g	NA	wisegeek.com	Fruit
+38	Canned Sweet corn	200	308 g	NA	wisegeek.com	Vegetable
+39	Grapes	200	290 g	NA	wisegeek.com	Fruit
+40	Ketchup	200	226 g	NA	wisegeek.com	Condiment
+41	Sliced Smoked Turkey	200	204 g	NA	wisegeek.com	Meat
+42	Balsamic Vinegar	200	200 ml	NA	wisegeek.com	Condiment
+43	Lowfat Strawberry Yogurt	200	196 g	NA	wisegeek.com	Dairy
+44	Canned Chili con Carne	200	189 g	NA	wisegeek.com	Vegetable
+45	Canned Black Beans	200	186 g	NA	wisegeek.com	Vegetable
+46	Canned Pork and Beans	200	186 g	NA	wisegeek.com	Vegetable
+47	Eggs	200	150 g	NA	wisegeek.com	Meat
+48	Cooked Pasta	200	145 g	NA	wisegeek.com	Grains
+49	Avocado	200	125 g	NA	wisegeek.com	Fruit
+50	Canned Tuna Packed in Oil	200	102 g	NA	wisegeek.com	Meat
+51	Fiber One Cereal	200	100 g	General Mills	wisegeek.com	Grains
+52	Flax Bread	200	90 g	NA	wisegeek.com	Grains
+53	Dried Apricots	200	83 g	NA	wisegeek.com	Fruit
+54	Jack in the Box Cheeseburger	200	75 g	Jack in the Box	wisegeek.com	Fast Food, Sandwich
+55	Jack in the Box French Fries	200	73 g	Jack in the Box	wisegeek.com	Fast Food
+56	Jack in the Box Chicken Sandwich	200	72 g	Jack in the Box	wisegeek.com	Fast Food, Sandwich
+57	French Sandwich Roll	200	72 g	NA	wisegeek.com	Grains
+58	Blueberry Muffin	200	72 g	NA	wisegeek.com	Grains
+59	Sesame Seed Bagel	200	70 g	NA	wisegeek.com	Grains
+60	Egg	78	1 large (50 g)	NA	Calorie Count	Protein
+61	Cheddar Cheese	113	1 slice (1 oz)	NA	Calorie Count	Dairy
+62	Beer	110	12 oz	Anheuser-Busch	Calorie Count	Beverage
+63	Beer	126	12 oz	Guinness	Calorie Count	Beverage
+64	Red Wine	150	6 oz	NA	Calorie Count	Beverage
+65	Vegetables and Tofu	300	26 oz	NA	about.com	Vegetable
+66	Whole Grain Crackers	300	34 chips	Wheat Thins	about.com	Grains
+67	Doritos	300	24 chips	Frito-Lay	about.com	Snack
+68	Frozen Blueberry Waffles (with syrup)	300	2 waffles	Eggo	about.com	Grains
+69	Macaroni and Cheese	300	3 oz	Kraft	about.com	Grains
+70	Chicken Wings	300	8 wings	NA	about.com	Meat
+71	Breaded Shrimp	300	9 shrimp	NA	about.com	Meat
+72	Dark Chocolate	300	1.5 bars	Hershey's	about.com	Snack
+73	Crackers	70	8 crackers	Triscuit	Mayo Clinic	Snack, Grains
+74	Whole Grain Pasta (cooked)	70	Half a cup	NA	Mayo Clinic	Grains
+75	Low Fat Cottage Cheese	110	2/3 cup	NA	Mayo Clinic	Dairy
+76	Low Fat Cheddar Cheese	110	2 oz	NA	Mayo Clinic	Dairy
+77	Mayonaise	45	2 tsp	NA	Mayo Clinic	Condiment
+78	Peanut Butter	45	1.5 tsp	NA	Mayo Clinic	Snack
+79	Almonds	45	7 whole almonds	NA	Mayo Clinic	Snack
+80	Lean Hamburger (beef)	110	2 oz	NA	Mayo Clinic	Meat
+81	Skinless chicken	110	2.5 oz	NA	Mayo Clinic	Meat
+82	Baked Beans	110	Half a cup	NA	Mayo Clinic	Vegetable
+83	Spinach	25	2 cups	NA	Mayo Clinic	Vegetable
+84	Apple	60	1 whole fruit (small)	NA	Mayo Clinic	Fruit
+85	Orange	60	1 whole fruit (medium)	NA	Mayo Clinic	Fruit
+86	Carrots (cooked)	25	Half a cup	NA	Mayo Clinic	Vegetable
+87	Tootsie Pops	200	68 g	Tootsie Roll	wisegeek.com	Snack, Dessert
+88	Hot Dogs	200	66 g	NA	wisegeek.com	Meat
+89	Wheat Dinner Rolls	200	66 g	NA	wisegeek.com	Grains
+90	Corn Bran Cereal	200	60 g	Quaker Oats	wisegeek.com	Grains
+91	Bailey's Irish Cream	200	60 ml	Gilbeys	wisegeek.com	Beverage
+92	Smarties Candy	200	57 g	Nestle	wisegeek.com	Snack, Dessert
+93	Uncooked Pasta	200	56 g	NA	wisegeek.com	Grains
+94	Blackberry Pie	200	56 g	NA	wisegeek.com	Dessert
+95	Cranberry Vanilla Crunch Cereal	200	55 g	NA	wisegeek.com	Grains
+96	Cornmeal	200	55 g	NA	wisegeek.com	Grains
+97	Wheat Flour	200	55 g	NA	wisegeek.com	Grains
+98	Peanut Butter Power Bar	200	54 g	NA	wisegeek.com	Snack
+99	Puffed Rice Cereal	200	54 g	NA	wisegeek.com	Grains
+100	Jelly Beans	200	54 g	Jelly Belly	wisegeek.com	Snack, Dessert
+101	Puffed Wheat Cereal	200	53 g	NA	wisegeek.com	Grains
+102	Brown Sugar	200	53 g	NA	wisegeek.com	Dessert
+103	Glazed Donut	200	52 g	NA	wisegeek.com	Snack, Dessert
+104	Salted Pretzels	200	52 g	NA	wisegeek.com	Snack, Grains
+105	Medium Cheddar Cheese	200	51 g	NA	wisegeek.com	Dairy
+106	Fruit Loops Cereal	200	51 g	Kellogg's	wisegeek.com	Grains
+107	Gummy Bears	200	51 g	NA	wisegeek.com	Snack, Dessert
+108	Splenda Sweetener	200	50 g	Tate & Lyle	wisegeek.com	Dessert
+109	Salted Saltines Crackers	200	50 g	NA	wisegeek.com	Snack, Grains
+110	Hard Candy	200	50 g	Werther	wisegeek.com	Snack, Dessert
+111	Chocolate Bar	200	41 g	Snickers	wisegeek.com	Snack, Dessert
+112	Doritos	200	41 g	Frito-Lay	wisegeek.com	Snack, Grains
+113	Marshmallow Treat	200	40 g	NA	wisegeek.com	Snack, Dessert
+114	M&M Candy	200	40 g	Mars	wisegeek.com	Snack, Dessert
+115	Peanut Butter Crackers	200	39 g	NA	wisegeek.com	Snack, Grains
+116	Cheetos	200	38 g	Frito-Lay	wisegeek.com	Snack, Grains
+117	Potato Chips	200	37 g	NA	wisegeek.com	Snack, Grains
+118	Chocolate	200	36 g	Hershey	wisegeek.com	Snack, Dessert
+119	Almonds	200	35 g	NA	wisegeek.com	Snack
+120	Fried Bacon	200	34 g	NA	wisegeek.com	Meat
+121	Peanut Butter	200	34 g	NA	wisegeek.com	Snack
+122	Salted Mixed Nuts	200	33 g	NA	wisegeek.com	Snack
+123	Butter	200	28 g	NA	wisegeek.com	Dairy
+124	Canola Oil	200	23 g	NA	wisegeek.com	Condiment
+125	Brownie	112	2 inch square	NA	Lecture 3	Dessert
+126	Pie With Ice Cream	1600	1 plate	Chili's	Lecture 3	Fast Food, Dessert
+127	Strawberries & Crème Frappuccino	750	Venti (20 oz)	NA	Lecture 3	Fast Food, Beverage, Dessert
+128	Cheese Fries With Ranch Dressing	2900	1 plate	Outback	Lecture 3	Fast Food

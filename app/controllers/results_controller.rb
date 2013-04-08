@@ -25,6 +25,7 @@ class ResultsController < ApplicationController
   # GET /results/new.json
   def new
     @result = Result.new
+    @foods = Food.all.shuffle[0..9]
 
     respond_to do |format|
       format.html # new.html.erb

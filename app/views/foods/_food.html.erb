@@ -1,0 +1,15 @@
+<div class="food_name">
+	<% if food.company == "NA" %> 
+		<h2><%= food.name %></h2>
+	<% else %>
+		<h2><%= food.company + " " + food.name %></h2>
+	<% end %>
+</div>
+
+<div class="food_img">
+	<%= image_tag(food.number.to_s + ".jpg") %>
+</div>
+
+<div class="food_source">
+	<%= food.source %>
+</div>

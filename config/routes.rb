@@ -1,4 +1,7 @@
 CalorieJudge::Application.routes.draw do
+  resources :foods
+
+
   resources :results
 
 
