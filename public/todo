@@ -2,11 +2,13 @@ todo
 ====
 
 - convert pngs to jpgs	| DONE
-- change home page
-- ask for name/gender/info when you first start
-- actually create results when you click submit
+- change home page | DONE
+- ask for name/gender/info when you first start | DONE
+- actually create results when you click submit | DONE
 - heavy css styling
 - add tag support
 - add suplementary information to the results page
-- find some way to replay while keeping track of previous data
+- find some way to replay while keeping track of previous data | DONE
+- find some way to keep track of high scores?
+- change diffs to use absval
 - add writeups and such
