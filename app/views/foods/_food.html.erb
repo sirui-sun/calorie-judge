@@ -7,9 +7,9 @@
 </div>
 
 <div class="food_img">
-	<%= image_tag(food.number.to_s + ".jpg") %>
+	<%= image_tag(food.number.to_s + ".jpg", :class => "maxHeight200") %>
 </div>
 
 <div class="food_source">
-	<%= food.source %>
+	Source: <%= food.source %>
 </div>
