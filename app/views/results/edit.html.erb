@@ -165,9 +165,12 @@
                 var inputValue = $('#<%= "input-" + n.to_s%>').val();
                 diffs[i] = Math.abs(inputValue - calorie_vals[i]);
   
-                var pctDiffSum = 0
-                for (var i = 0; i < diffs.length; i++) 
+                var pctDiffSum = 0;
+                var sum = 0;
+                for (var i = 0; i < diffs.length; i++)  {
                 	pctDiffSum += (diffs[i]-calorie_vals[i]);
+                    sum += diffs[i];
+                }
 
                 // ajax call to edit the results object
                 $.ajax({
@@ -184,10 +187,9 @@
 
 
                 var sumPctDiffs = 0;
-                var sum = 0;
+                
                 for (var i = 0; i < diffs.length; i++) {
                     sumPctDiffs += (diffs[i]/calorie_vals[i]);
-                    sum += diffs[i];
                 }
 
                 var avgPctError = Math.round(sumPctDiffs/10 * 100);
@@ -218,7 +220,8 @@
                         if ($.inArray(unique_tags[i], tag_list[j]) !== -1) {
                             totalVals++;
                             totalDiff += diffs[j];
-                            totalPctError += (diffs[j]/calorie_vals[j]);
+                            totalPctError += (diffs[j]/calorie_vals[j] * 100);
+                            alert(unique_tags[i] + ": " + totalPctError);
                         }
                     }
 
