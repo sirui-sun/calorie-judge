@@ -221,13 +221,12 @@
                             totalVals++;
                             totalDiff += diffs[j];
                             totalPctError += (diffs[j]/calorie_vals[j] * 100);
-                            alert(unique_tags[i] + ": " + totalPctError);
                         }
                     }
 
                     // append this information to the document
                     $('#category-result').append("<div class='category-entry'>" +
-                        "<div class='cat-name'>" + unique_tags[i] + " - </div><div class=cat-total-diff>Total Difference: " + totalDiff + '</div><div class="cat-avg-diff">Average Difference:' + Math.round(totalDiff/totalVals) +  "</div><div class='cat-avg-error'>Average Percent Error: " + Math.round(totalPctError/totalVals) * 100 + "</div></div>");
+                        "<div class='cat-name'>" + unique_tags[i] + " - </div><div class=cat-total-diff>Total Difference: " + totalDiff + '</div><div class="cat-avg-diff">Average Difference:' + Math.round(totalDiff/totalVals) +  "</div><div class='cat-avg-error'>Average Percent Error: " + Math.round(totalPctError/totalVals) + "</div></div>");
                 }
 
             });

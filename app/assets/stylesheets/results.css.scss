@@ -31,6 +31,12 @@ body{
 	font-family: Impact, Charcoal, sans-serif;
 }
 
+.center {
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 #subtitle {
 	font-style: italic;
 	padding-left: 50px;
@@ -93,7 +99,9 @@ body{
 
 .food_img {
 	padding-top: 10px;
-	margin-left: 100px
+	width: 250px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .food-name {
