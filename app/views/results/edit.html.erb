@@ -165,16 +165,16 @@
                 var inputValue = $('#<%= "input-" + n.to_s%>').val();
                 diffs[i] = Math.abs(inputValue - calorie_vals[i]);
   
-                var sum = 0
+                var pctDiffSum = 0
                 for (var i = 0; i < diffs.length; i++) 
-                	sum += diffs[i];
+                	pctDiffSum += (diffs[i]-calorie_vals[i]);
 
                 // ajax call to edit the results object
                 $.ajax({
                 	url: "/results/addResult",
                 	data: {
                 		id: <%= @result.id %>,
-                		result: sum
+                		result: pctDiffSum
                 	}
                 });
 
@@ -184,23 +184,25 @@
 
 
                 var sumPctDiffs = 0;
+                var sum = 0;
                 for (var i = 0; i < diffs.length; i++) {
                     sumPctDiffs += (diffs[i]/calorie_vals[i]);
+                    sum += diffs[i];
                 }
 
                 var avgPctError = Math.round(sumPctDiffs/10 * 100);
                 var grade = $('#final-grade');
                 $('#avg-pct-result').append(avgPctError);
                 if (avgPctError < 10) {
-                    grade.append('A');
+                    grade.append('Perfect!');
                 } else if (avgPctError < 20) {
-                    grade.append('B');
+                    grade.append('Excellent');
                 } else if (avgPctError < 30) {
-                    grade.append('C');
+                    grade.append('Great');
                 } else if (avgPctError < 40) {
-                    grade.append('D');
+                    grade.append('Good');
                 } else {
-                    grade.append('F');
+                    grade.append('Fair');
                 }
 
                 // populate the tags categories
