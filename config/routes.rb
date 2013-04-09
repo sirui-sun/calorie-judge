@@ -10,7 +10,7 @@ CalorieJudge::Application.routes.draw do
     end
   end
   
-  root to: 'results#home'
+  root to: 'results#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

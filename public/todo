@@ -1,15 +1,15 @@
 todo
 ====
 
-- heavy css styling
-- only pick max of two from the 200 calorie segment
-- add tag support
-- add suplementary information to the results page
 - find some way to keep track of high scores?
-- change diffs to use absval
 - add writeups and such
 
 
+- heavy css styling | DONE
+- only pick max of two from the 200 calorie segment | DONE
+- add tag support | DONE
+- add suplementary information to the results page | DONE
+- change diffs to use absval | DONE
 - find some way to replay while keeping track of previous data | DONE
 - convert pngs to jpgs	| DONE
 - change home page | DONE
