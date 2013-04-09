@@ -39,7 +39,9 @@ class ResultsController < ApplicationController
   # GET /results/1/edit
   def edit
     @result = Result.find(params[:id])
-    @foods = Food.all.shuffle[0..9]
+    @thfoods = Food.all.select { |x| x.calorie == 200 }
+    @otherfoods = Food.all.select { |x| x.calorie != 200 } 
+    @foods = (@thfoods.shuffle[0..1] + @otherfoods.shuffle[0..7]).shuffle
 
     respond_to do |format| 
       format.html

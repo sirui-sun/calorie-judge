@@ -2,9 +2,10 @@
 	<div class="food-info">
 	<% if food.company == "NA" %> 
 		<div class="food-name"><%= food.name %></div>
+		<div class="food-subtitle"><%= food.serving_size %></div>
 	<% else %>
 		<div class="food-name"><%= food.name %></div>
-		<div class="food-subtitle"><%= "(made by " + food.company + ")" %></div>
+		<div class="food-subtitle"><%= food.serving_size %> | <%= "made by " + food.company %></div>
 	<% end %>
 	</div>
 

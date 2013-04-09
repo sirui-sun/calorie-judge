@@ -17,13 +17,8 @@
     <td><%= result.gender %></td>
     <td><%= result.age %></td>
     <td><%= result.result %></td>
-    <td><%= link_to 'Show', result %></td>
-    <td><%= link_to 'Edit', edit_result_path(result) %></td>
-    <td><%= link_to 'Destroy', result, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New Result', new_result_path %>

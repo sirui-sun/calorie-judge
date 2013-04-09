@@ -1,0 +1,84 @@
+<div class="results-foodbox">
+	<span class="number-col"> <%= (n+1) %>. </span>
+	<span class="image-col">
+		<%= image_tag(food.number.to_s + ".jpg", :class => "maxHeight75") %>
+	</span>
+	<span class="food-name-col">
+		<% if food.company == "NA" %>
+			<div class="main"><%= food.name %></div>
+			<div class="sub"><%= food.serving_size %></div>
+		<% else %>
+			<div class="main"><%= food.name %></div>
+			<div class="sub"><%= food.serving_size %>, <%= "made by " + food.company %></div>
+		<% end %>
+	</span>
+	<span class="guess-col">
+		<div id=<%= "gc1-" + n.to_s %>>
+			<script>
+				var guess, actual;
+				$('#food-button-9').on('click', function() {
+					guess = $('#<%= "input-" + n.to_s%>').val();
+					actual = calorie_vals[<%= n %>];
+					$('#<%= "gc1-" + n.to_s %>').append("Your guess: " + guess);
+				});
+			</script>
+		</div>
+
+		<div id=<%= "gc2-" + n.to_s %>>
+			<script>
+				$('#food-button-9').on('click', function() {
+					$('#<%= "gc2-" + n.to_s %>').append(" Actual: " + actual);
+				});
+			</script>
+		</div>
+	</span>
+
+	<span class="results-col" id=<%= "r" + n.to_s %>>
+		<div class="difference-box" id = <%= "gc3-" + n.to_s %>>
+			<script>
+				$('#food-button-9').on('click', function() {
+					var difference = guess - actual;
+					if (difference > 0) {
+						$("#<%= 'gc3-' + n.to_s %>").append(" Difference: +" + difference);
+					} else {
+						$("#<%= 'gc3-' + n.to_s %>").append(" Difference: " + difference);
+					}
+				});
+			</script>
+		</div>
+
+		<div class="" id = <%= "gc4-" + n.to_s %>>
+			<script>
+				$('#food-button-9').on('click', function() {
+					// enter percent error
+					var pctDiff = Math.round((guess - actual)/actual * 100);
+					if (pctDiff > 0) {
+						$('#<%= "gc4-" + n.to_s %>').append(" Percent Error: +" + pctDiff);
+					} else {
+						$('#<%= "gc4-" + n.to_s %>').append(" Percent Error: " + pctDiff);
+					}
+
+					// set style of box given results
+					var absPctDiff = Math.abs(pctDiff)
+					if (absPctDiff <= 20) {
+						$('#<%= "r" + n.to_s %>').css({
+							"background-color": "green",
+							"color": "white"
+						});
+					} else if (absPctDiff <= 40) {
+						$('#<%= "r" + n.to_s %>').css({
+							"background-color": "yellow",
+						});
+					} else {
+						$('#<%= "r" + n.to_s %>').css({
+							"background-color": "red",
+							"color": "white"
+						});
+					}
+				});
+			</script>
+		</div>
+	</span>
+
+
+</div>

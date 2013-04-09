@@ -99,7 +99,6 @@ body{
 .food-name {
 	font-size: 24px;
 	font-weight: bold;
-	width: 350px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -109,6 +108,7 @@ body{
 	margin-left: auto;
 	margin-right: auto;
 	width: 350px;
+	text-align: center;
 }
 
 .entry-box {
@@ -130,3 +130,228 @@ body{
 	margin-left: auto;
 	margin-right: auto;
 }
+
+.counter {
+	font-size: 10px;
+	float: right;
+	position: relative;
+	left: 89px;
+	bottom: 8px;
+}
+
+#end {
+	margin-top: 50px;
+	background-color: white;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 10px;
+	box-shadow: 6px 6px 3px #888888;
+	border-radius: 15px;
+}
+
+.end-title {
+	font-size: 36px;
+	font-weight: bold;
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	padding-top: 25px;
+}
+
+.smaller {
+	margin-top: 25px;
+	font-size: 24px;
+}
+
+.results-foodbox {
+	padding-top: 25px;
+	padding-bottom: 10px;
+	padding-left: 50px;
+	width: 600px;
+	height: 100px;
+}
+
+.maxHeight75 {
+	height: 75px;
+}
+
+.number-col {
+	font-size: 32px;
+	padding-left: 10px;
+	float: left;
+	width: 50px;
+	position: relative;
+	top: 30px;
+}
+
+.food-name-col {
+	line-height: 80%;
+	font-size: 20px;
+	padding-left: 10px;
+	float: left;
+	width: 138px;
+	position: relative;
+	top: 23px;
+}
+
+.image-col {
+	padding-left: 10px;
+	float: left;
+	width: 100px;
+}
+
+.guess-col {
+	font-size: 20px;
+	font-weight: bold;
+	padding-left: 10px;
+	float: left;
+	position: relative;
+	top: 22px;
+
+}
+
+.results-col {
+	font-size: 20px;
+	font-weight: bold;
+	padding-left: 10px;
+	float: right;
+	border: solid 1px lightGrey;
+	border-radius: 5px;
+	position: relative;
+	top: -17px;
+	left: 80px;
+	width: 182px;
+	height: 46px;
+}
+
+.difference-box {
+	padding-top: 4px;
+}
+
+.main {
+	font-weight: bold;
+}
+
+.sub {
+	font-style: italic;
+	font-size: 13px;
+}
+
+.info {
+	font-size: 13px;
+	margin-left: 20px;
+	margin-right:20px;
+	margin-top: 20px;
+}
+
+.info-subtitle {
+	text-align: center;
+}
+
+#final-result {
+	width: 700px;
+	height: 110px;
+	border: 1px solid #E0E0E0;
+	background-color: #E8E8E8;
+	border-radius: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 23px;
+}
+
+.sub-result {
+	width: 150px;
+	float: left;
+	padding-left: 22px;
+}
+
+.result-main {
+	padding-top: 3px;
+	height: 20px;
+	font-weight: bold;
+	font-size: 16px;
+	text-align:center;
+}
+
+.result-sub {
+	height: 50px;
+	font-style: italic;
+	text-align: center;
+	font-size: 12px;
+}
+
+.result-val {
+	padding-top: 15px;
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+}
+
+
+#category-result {
+	margin-top: 20px;
+	width: 700px;
+	border: 1px solid #E0E0E0;
+	background-color: #E8E8E8;
+	border-radius: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 8px;
+}
+
+.category-entry {
+	height: 26px;
+	font-size: 18px;
+}
+
+.cat-name {
+	font-weight: bold;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	float:left;
+}
+
+.cat-total-diff {
+	font-style: italic;
+	font-size: 14px;
+	float: left;
+	padding-left: 10px;
+}
+
+.cat-avg-diff {
+	font-style: italic;
+	font-size: 14px;
+	float: left;
+	padding-left: 10px;
+}
+
+.cat-avg-error {
+	font-style: italic;
+	font-size: 14px;
+	float: left;
+	padding-left: 10px;
+}
+
+.retry-button {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 350px;
+	margin-left: 200px;
+	color: white;
+}
+
+#more-information {
+	margin-top: 20px;
+	width: 700px;
+	border: 1px solid #E0E0E0;
+	background-color: #E8E8E8;
+	border-radius: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 8px;
+}
+

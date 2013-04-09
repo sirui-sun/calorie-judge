@@ -3,6 +3,23 @@
     var diff = 0;
     var calorie_vals = [<%= @foods[0].calorie%>, <%= @foods[1].calorie%>, <%= @foods[2].calorie%>, <%= @foods[3].calorie%>, <%= @foods[4].calorie%>, <%= @foods[5].calorie%>, <%= @foods[6].calorie%>, <%= @foods[7].calorie%>, <%= @foods[8].calorie%>, <%= @foods[9].calorie%>];
     var diffs = [0,0,0,0,0,0,0,0,0,0];
+
+    var tags = ["<%= @foods[0].tags%>", "<%= @foods[1].tags%>", "<%= @foods[2].tags%>", "<%= @foods[3].tags%>", "<%= @foods[4].tags%>", "<%= @foods[5].tags%>", "<%= @foods[6].tags%>", "<%= @foods[7].tags%>", "<%= @foods[8].tags%>", "<%= @foods[9].tags%>"];
+    var unique_tags = [];
+    var tag_list = [];
+
+    for (var i = 0; i < tags.length; i++) {
+        tag_list.push(tags[i].split(","));
+    }
+
+    for (var i = 0; i < tag_list.length; i++) {
+        for (var j = 0; j < tag_list[i].length; j++) {
+            if ($.inArray(tag_list[i][j], unique_tags) === -1) {
+                unique_tags.push(tag_list[i][j]);
+            }
+        }
+    }
+
 </script>
 
 <% (0..9).each do |n| %>
@@ -12,25 +29,109 @@
         <div class="instructions">How many calories?</div>
         <input type="number" id="<%= "input-" + n.to_s %>" value="0"/>
     	<div id= <%= "food-button-" + n.to_s %> class="btn btn-info btn-pos">Next</div>
+        <div class="counter">(<%= (n+1).to_s + "/10" %>)</div>
     </div>
 </div>
 <% end %>
 
 <div id="end">
-	<h1>Results</h1>
+	<div class="end-title">Results</div>
+
     <% (0..9).each do |n| %>
         <div id=<%= "results-" + n.to_s %>>
-            <%= render @foods[n] %>
+            <%= render :partial => "foods/food_results", :locals => {:food => @foods[n], :n => n} %>
         </div>
     <% end %>
-	<%= link_to "Retry?",
-	{:controller => "results", :action => "retry", :id => @result.id},
-	{:class => "btn btn-info"} %>
 
+    <div id="final-result">
+
+        <div class="sub-result" id="sum-value">
+            <div class="result-main">
+                Total Difference
+            </div>
+
+            <div class="result-sub">
+                Total difference between your guesses and actual results
+            </div>
+
+            <div class="result-val" id='sum-value-result'>
+            </div>
+        </div>
+
+        <div class="sub-result" id="avg-value">
+            <div class="result-main">
+                Average Difference
+            </div>
+
+            <div class="result-sub">
+                Average difference between your guesses and actual results
+            </div>
+
+            <div class="result-val" id='avg-value-result'>
+            </div>
+        </div>
+
+
+        <div class="sub-result" id="avg-pct">
+            <div class="result-main">
+                Average Pct Error
+            </div>
+
+            <div class="result-sub">
+                Average Percent Error between guesses and actual results
+            </div>
+
+            <div class="result-val" id='avg-pct-result'>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="sub-result" id="grade">
+            <div class="result-main">
+                Overall Grade
+            </div>
+
+            <div class="result-sub">
+                Overall Grade of your performance
+            </div>
+
+            <div class="result-val" id='final-grade'>
+            </div>
+        </div>
+    </div>
+
+    <div class="end-title smaller">Results By Category</div>
+    <div id="category-result"></div>
+
+    <div class="end-title smaller">More Information</div>
+    <div id="category-result">
+        <div class="sub info-subtitle">
+            Need help improving your score? Consult these resources for help!
+        </div>
+
+        <div class="info info-main">
+            People generally tend to overestimate the calories in their food. One study by Lansky & Brownell (1982) found that participants overestimated by 53% on average. To see these results broken down by food category, check out <a href='<%= ENV["RAILS_RELATIVE_URL_ROOT"] %>/assets/Lecture3.Nutrition.pdf'>this pdf</a>. The original paper for this study can be found 
+            <a href="http://ajcn.nutrition.org/content/35/4/727.long">here</a>
+        </div>
+
+        <div class="info info-main">
+            Labeling calories in fast food items is always an important topic in current debate. For more information on how consumers generally estimate caloric content of fast food, check out
+            <a href="http://foodpsychology.cornell.edu/research/summary-psychological-model.html">research from the Cornell Food Pyschology Lab.</a>
+        </div>
+
+        <div class="info info-main">
+            Accurately determining portion size is another important step in tracking food intake. 
+            <a href="http: //www.webmd.com/diet/healthtool-portion-size-plate">WebMD</a> has good tips on determining the proper portion sizes in foods.
+        </div>
+    </div>
+
+	<%= link_to "Retry with Different Foods?",
+	{:controller => "results", :action => "retry", :id => @result.id},
+	{:class => "btn btn-info retry-button"} %>
 </div>
 
 <script>
-
     var i = 0
     $('#retry-button').on('click', function() {
         $('#end').fadeOut(400, function() {
@@ -50,7 +151,7 @@
                 });
 
                 var inputValue = $('#<%= "input-" + n.to_s%>').val();
-                diffs[i] = inputValue - calorie_vals[i];
+                diffs[i] = Math.abs(inputValue - calorie_vals[i]);
                 i += 1;
 
             });
@@ -62,14 +163,8 @@
 
                 // last guess, prepare results page
                 var inputValue = $('#<%= "input-" + n.to_s%>').val();
-                diffs[i] = inputValue - calorie_vals[i];
-        
-                // update guesses on results page
-                var j = 0
-                <% (0..9).each do |n| %>
-                $('#<%= "results-" + n.to_s%>').append("Your guess: " + (diffs[j] + calorie_vals[j]) + " Actual: " + calorie_vals[j]);
-                j += 1;
-
+                diffs[i] = Math.abs(inputValue - calorie_vals[i]);
+  
                 var sum = 0
                 for (var i = 0; i < diffs.length; i++) 
                 	sum += diffs[i];
@@ -83,7 +178,53 @@
                 	}
                 });
 
-                <% end %>
+                // populate the results tables
+                $('#sum-value-result').append(sum);
+                $('#avg-value-result').append(Math.round(sum/10));
+
+
+                var sumPctDiffs = 0;
+                for (var i = 0; i < diffs.length; i++) {
+                    sumPctDiffs += (diffs[i]/calorie_vals[i]);
+                }
+
+                var avgPctError = Math.round(sumPctDiffs/10 * 100);
+                var grade = $('#final-grade');
+                $('#avg-pct-result').append(avgPctError);
+                if (avgPctError < 10) {
+                    grade.append('A');
+                } else if (avgPctError < 20) {
+                    grade.append('B');
+                } else if (avgPctError < 30) {
+                    grade.append('C');
+                } else if (avgPctError < 40) {
+                    grade.append('D');
+                } else {
+                    grade.append('F');
+                }
+
+                // populate the tags categories
+                // for each unique tag, find the foods that fit into the tag
+                for (var i = 0; i < unique_tags.length; i++) {
+                    var totalVals = 0;
+                    var totalDiff = 0;
+                    var totalPctError = 0;
+                    
+                    // look through the list of foods to find matches
+                    for (var j = 0; j < tag_list.length; j++ ) {
+                        // found a match
+                        if ($.inArray(unique_tags[i], tag_list[j]) !== -1) {
+                            totalVals++;
+                            totalDiff += diffs[j];
+                            totalPctError += (diffs[j]/calorie_vals[j]);
+                        }
+                    }
+
+                    // append this information to the document
+                    $('#category-result').append("<div class='category-entry'>" +
+                        "<div class='cat-name'>" + unique_tags[i] + " - </div><div class=cat-total-diff>Total Difference: " + totalDiff + '</div><div class="cat-avg-diff">Average Difference:' + Math.round(totalDiff/totalVals) +  "</div><div class='cat-avg-error'>Average Percent Error: " + Math.round(totalPctError/totalVals) * 100 + "</div></div>");
+                }
+
             });
         <% end %>
     <% end %>
