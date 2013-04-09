@@ -1,29 +1,27 @@
 <div id="start">
-    <h2>Welcome to Calorie Judge</h2>
-
-    <div>How accurate are your calorie estimation skills? Click start to find out!</div>
+    <div id="header">Welcome to Calorie Crunch!</div>
+    <div id="subtitle">A Food Psych Final Project by Zak Kaplan and Sirui Sun. Click start to find out how accurate your calorie estimation skills are!</p></div>
 
     <%= form_for(@result) do |f| %>
 
-        <div>
+        <div id="name-field">
             <%= f.label :name %>
-            <%= f.text_field :name %>
+            <%= f.text_field :name, :cols => "20" %>
         </div>
 
-        <div>
+        <div id="age-field">
             <%= f.label :age %>
-            <%= f.text_field :age %>
+            <%= f.text_field :age, :cols => "20" %>
         </div>
 
-        <div>
-            <%= label_tag(:gender_female, "female") %>
-            <%= radio_button_tag(:gender, "female") %>
-            <%= label_tag(:gender_male, "male") %>
-            <%= radio_button_tag(:gender, "male") %>
+        <div id="gender-fields">
+            <div id="gender-field-female"><%= label_tag(:gender_female, "female") %>
+            <%= radio_button_tag(:gender, "female") %></div>
+            <div id="gender-field-male"><%= label_tag(:gender_male, "male") %>
+            <%= radio_button_tag(:gender, "male") %></div>
         </div>
 
-        <%= f.submit "Start", :class => "btn btn-large btn-primary" %>
+        <%= f.submit "Let's go!", :class => "btn btn-large btn-primary", :id => "start-button" %>
     <% end %>
-
 </div>
 

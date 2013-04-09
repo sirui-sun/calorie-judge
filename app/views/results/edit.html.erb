@@ -8,8 +8,11 @@
 <% (0..9).each do |n| %>
 <div id= <%= "food-" + n.to_s %>>
     <%= render @foods[n] %>
-    <input type="number" id="<%= "input-" + n.to_s %>" value="0"/>
-	<div id= <%= "food-button-" + n.to_s %> class="btn btn-info">Next</div>
+    <div class="entry-box">
+        <div class="instructions">How many calories?</div>
+        <input type="number" id="<%= "input-" + n.to_s %>" value="0"/>
+    	<div id= <%= "food-button-" + n.to_s %> class="btn btn-info btn-pos">Next</div>
+    </div>
 </div>
 <% end %>
 

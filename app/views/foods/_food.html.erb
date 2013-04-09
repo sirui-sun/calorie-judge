@@ -1,15 +1,14 @@
-<div class="food_name">
+<div class="foodbox">
+	<div class="food-info">
 	<% if food.company == "NA" %> 
-		<h2><%= food.name %></h2>
+		<div class="food-name"><%= food.name %></div>
 	<% else %>
-		<h2><%= food.company + " " + food.name %></h2>
+		<div class="food-name"><%= food.name %></div>
+		<div class="food-subtitle"><%= "(made by " + food.company + ")" %></div>
 	<% end %>
-</div>
+	</div>
 
-<div class="food_img">
-	<%= image_tag(food.number.to_s + ".jpg", :class => "maxHeight200") %>
-</div>
-
-<div class="food_source">
-	Source: <%= food.source %>
+	<div class="food_img">
+		<%= image_tag(food.number.to_s + ".jpg", :class => "maxHeight200") %>
+	</div>
 </div>
